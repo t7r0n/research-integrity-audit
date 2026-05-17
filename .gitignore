@@ -1,0 +1,14 @@
+.venv/
+.ruff_cache/
+.pytest_cache/
+__pycache__/
+*.py[cod]
+
+.research-integrity/
+fixtures/
+outputs/
+
+.DS_Store
+dist/
+build/
+*.egg-info/
