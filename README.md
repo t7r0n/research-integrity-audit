@@ -4,7 +4,11 @@ A local-first prototype for auditing qualitative research insights with quote-le
 
 The project creates a deterministic synthetic study, ingests transcripts and survey-style fixtures, scores participant quality, extracts claim support and counterevidence, and produces an evidence dashboard. It is designed to make generated research summaries easier to verify without relying on external APIs.
 
-## Features
+## Problem shape
+
+Local research integrity audit engine prototype for evidence-backed insights.
+
+## What the harness exercises
 
 - Synthetic respondent, transcript, survey, and screen-event fixtures
 - SQLite WAL evidence store with full-text quote search
@@ -16,7 +20,7 @@ The project creates a deterministic synthetic study, ingests transcripts and sur
 - Static HTML audit dashboard
 - 500-transcript local benchmark
 
-## Quick Start
+## Local workflow
 
 ```bash
 uv sync
@@ -31,17 +35,7 @@ uv run research-integrity dashboard
 uv run research-integrity export-demo-pack
 ```
 
-The demo writes audited claims, quality reports, graph artifacts, and a static dashboard under `outputs/`.
-
-## Validation
-
-```bash
-uv run ruff check .
-uv run pytest -q
-uv run research-integrity --help
-```
-
-## Generated Artifacts
+## Review surfaces
 
 - `fixtures/respondents.csv`
 - `fixtures/transcripts/interviews.csv`
@@ -50,12 +44,15 @@ uv run research-integrity --help
 - `outputs/claims.csv`
 - `outputs/cluster_report.csv`
 - `outputs/summary_packet.md`
-- `outputs/evidence_graph.mmd`
-- `outputs/executive_summary.md`
-- `outputs/benchmark.md`
-- `outputs/insight_audit.html`
-- `outputs/demo_pack.md`
 
-## Local Data Policy
+## Quality checks
 
-The included demo data is synthetic. Runtime state and generated artifacts are ignored by git so public commits remain limited to source, tests, and reproducible setup files.
+```bash
+uv run ruff check .
+uv run pytest -q
+uv run research-integrity --help
+```
+
+## Repository hygiene
+
+The `research-integrity-audit` public surface is source, tests, lockfile, and docs. It does not need credentials, browser state, customer records, or hosted services.
